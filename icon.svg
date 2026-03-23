@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Dark carbon-like background gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="65%">
+      <stop offset="0%"   stop-color="#2A2520"/>
+      <stop offset="100%" stop-color="#111009"/>
+    </radialGradient>
+
+    <!-- Bronze/copper ring gradient -->
+    <linearGradient id="bronzeRing" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%"   stop-color="#D4956A"/>
+      <stop offset="30%"  stop-color="#C67C4E"/>
+      <stop offset="60%"  stop-color="#A85C32"/>
+      <stop offset="100%" stop-color="#C67C4E"/>
+    </linearGradient>
+
+    <!-- Cream/ivory center -->
+    <radialGradient id="centerGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%"   stop-color="#F0EAE0"/>
+      <stop offset="100%" stop-color="#D8CEBC"/>
+    </radialGradient>
+
+    <!-- Bronze text gradient -->
+    <linearGradient id="bronzeText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#C87E52"/>
+      <stop offset="100%" stop-color="#9A5830"/>
+    </linearGradient>
+
+    <!-- Green LED glow -->
+    <radialGradient id="ledGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#5FD87A"/>
+      <stop offset="60%"  stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#15803D" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="18" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="innerShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="225" fill="url(#bgGrad)"/>
+
+  <!-- Subtle texture lines (carbon fiber suggestion) -->
+  <rect width="1024" height="1024" rx="225" fill="none"
+    stroke="#FFFFFF" stroke-opacity="0.015" stroke-width="1"/>
+
+  <!-- ── Outer bronze ring ── -->
+  <circle cx="512" cy="512" r="420" fill="none"
+    stroke="url(#bronzeRing)" stroke-width="72" filter="url(#shadow)"/>
+
+  <!-- Ring highlight top -->
+  <path d="M 172 340 A 340 340 0 0 1 852 340"
+    fill="none" stroke="#E8B088" stroke-opacity="0.5" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Ring shadow bottom -->
+  <path d="M 172 684 A 340 340 0 0 0 852 684"
+    fill="none" stroke="#6B3818" stroke-opacity="0.6" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- ── Tick marks around the top arc (like the logo) ── -->
+  <!-- 11 ticks across the top 180° of the ring, evenly spaced -->
+  <g stroke="#3A2010" stroke-opacity="0.7" stroke-linecap="round">
+    <!-- Each tick radiates outward from center 512,512, at radius 420 (ring center) -->
+    <!-- ticks from ~205° to ~335° (top arc, 130° span, 11 ticks = 13° apart) -->
+    <line x1="512" y1="92" x2="512" y2="120" transform="rotate(205,512,512)" stroke-width="3"/>
+    <line x1="512" y1="92" x2="512" y2="125" transform="rotate(218,512,512)" stroke-width="3"/>
+    <line x1="512" y1="92" x2="512" y2="125" transform="rotate(231,512,512)" stroke-width="3"/>
+    <line x1="512" y1="92" x2="512" y2="130" transform="rotate(244,512,512)" stroke-width="4"/>
+    <line x1="512" y1="92" x2="512" y2="125" transform="rotate(257,512,512)" stroke-width="3"/>
+    <line x1="512" y1="92" x2="512" y2="135" transform="rotate(270,512,512)" stroke-width="5"/>
+    <line x1="512" y1="92" x2="512" y2="125" transform="rotate(283,512,512)" stroke-width="3"/>
+    <line x1="512" y1="92" x2="512" y2="130" transform="rotate(296,512,512)" stroke-width="4"/>
+    <line x1="512" y1="92" x2="512" y2="125" transform="rotate(309,512,512)" stroke-width="3"/>
+    <line x1="512" y1="92" x2="512" y2="125" transform="rotate(322,512,512)" stroke-width="3"/>
+    <line x1="512" y1="92" x2="512" y2="120" transform="rotate(335,512,512)" stroke-width="3"/>
+  </g>
+
+  <!-- ── Cream center disc ── -->
+  <circle cx="512" cy="512" r="300" fill="url(#centerGrad)" filter="url(#innerShadow)"/>
+
+  <!-- Center disc inner ring (bronze accent) -->
+  <circle cx="512" cy="512" r="300" fill="none"
+    stroke="url(#bronzeRing)" stroke-width="6" stroke-opacity="0.6"/>
+
+  <!-- ── Bottom cutout suggestion (like the logo's bottom notch) ── -->
+  <path d="M 300 760 Q 512 820 724 760 L 724 780 Q 512 845 300 780 Z"
+    fill="url(#bgGrad)" opacity="0.6"/>
+
+  <!-- ── Main number ── -->
+  <text x="512" y="550"
+    text-anchor="middle"
+    font-family="-apple-system, 'SF Pro Rounded', 'Helvetica Neue', Arial, sans-serif"
+    font-size="200"
+    font-weight="800"
+    fill="url(#bronzeText)"
+    filter="url(#shadow)"
+  >34</text>
+
+  <!-- ── "HEALTHY" label ── -->
+  <text x="512" y="626"
+    text-anchor="middle"
+    font-family="-apple-system, 'SF Pro Rounded', 'Helvetica Neue', Arial, sans-serif"
+    font-size="52"
+    font-weight="700"
+    letter-spacing="8"
+    fill="url(#bronzeText)"
+    opacity="0.7"
+  >HEALTHY</text>
+
+  <!-- ── Green LED (left side of ring, ~9 o'clock) ── -->
+  <circle cx="94" cy="512" r="24" fill="#000" opacity="0.5"/>
+  <circle cx="94" cy="512" r="18" fill="url(#ledGlow)"/>
+  <circle cx="94" cy="512" r="8"  fill="#7EF09A"/>
+</svg>
